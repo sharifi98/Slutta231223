@@ -9,8 +9,10 @@ import SwiftUI
 
 struct StatisticsView: View {
     @ObservedObject var counterViewModel: CounterViewModel
+    @State private var twentyMinutes: Double = 0.0
     // Changed to true to test things, change back to false
     @State private var userHasQuitted: Bool = true
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     var body: some View {
         NavigationStack {
@@ -25,35 +27,46 @@ struct StatisticsView: View {
                 }
                 
                 backgroundView
-                
+            
                 if userHasQuitted {
                     quittedUserView
+
+
                 } else {
                     newUserView
                 }
             }
         }
+        .onReceive(timer) { _ in
+            self.counterViewModel.objectWillChange.send() // This will cause the view to redraw
+        }
         .navigationBarTitleDisplayMode(.inline)
     }
-
-    private var backgroundView: some View {
-        Color.orange.opacity(0.15).ignoresSafeArea()
-    }
-
+    
     private var quittedUserView: some View {
-        ScrollView {
-            GlassmorphicCardView {
-                
-                VStack(alignment: .center) {
-                    Text("You quit on \(counterViewModel.quitDate.formatted())")
-                    Text("Amount of pouches per day \(counterViewModel.numberOfSnusPerDay)")
-                    Text("\(counterViewModel.moneySaved())")
+            ScrollView {
+                GlassmorphicCardView {
+                    VStack(alignment: .center) {
+                        CounterView(counterViewModel: counterViewModel)
+                        
+                        VStack {
+                            Text("Penger part:")
+                            Text("\(counterViewModel.moneySaved(), specifier: "%.2f") kr")
+                                .font(.system(size: 30))
+                                .bold()
+                        }
+                    }
                 }
             }
+            .scrollDisabled(true)
+            .padding(.vertical, 30)
         }
-        .scrollDisabled(true)
-        .padding(.vertical, 30)
+
+
+    private var backgroundView: some View {
+        Color.orange.opacity(0.3).ignoresSafeArea()
     }
+
 
     private var newUserView: some View {
         ZStack {

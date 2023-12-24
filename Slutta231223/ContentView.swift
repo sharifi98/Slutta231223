@@ -13,7 +13,9 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
+            
             TabView(selection: $selectedTab) {
+                
                 StatisticsView(counterViewModel: counterViewModel)
                     .tabItem {
                         Label("Statistikk", systemImage: "chart.bar.xaxis")
@@ -31,6 +33,7 @@ struct ContentView: View {
                     if selectedTab == 0 {
                         NavigationLink(destination: InputView(counterViewModel: counterViewModel)) {
                             Text("Slutt nå!")
+                                .font(.system(size: 18))
                                 .foregroundStyle(.black)
                                 .underline()
                         }
@@ -39,12 +42,15 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     if selectedTab == 0 {
                         Text("Fun facts")
+                            .font(.system(size: 18))
                             .foregroundStyle(.black)
                             .underline()
                     }
                 }
             }
         }
+        .tint(.red.opacity(0.8))
+        
     }
 }
 

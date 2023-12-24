@@ -55,8 +55,31 @@ class CounterViewModel: ObservableObject {
         
         return moneySaved
     }
+    
+    func elapsedTimeAttributed() -> AttributedString {
+        let now = Date.now
+        let elapsedTime = now.timeIntervalSince(quitDate)
 
-    
-    
+        let days = Int(elapsedTime / 86400)
+        let hours = Int((elapsedTime / 3600).truncatingRemainder(dividingBy: 24))
+        let minutes = Int((elapsedTime / 60).truncatingRemainder(dividingBy: 60))
+        let seconds = Int(elapsedTime.truncatingRemainder(dividingBy: 60))
+
+        var attributedString = AttributedString("\(days) dager\n\(hours) timer\n\(minutes) minutt\n\(seconds) sekund")
+
+        
+        attributedString.foregroundColor = .blue // Change color
+        attributedString.font = .system(size: 18, weight: .bold) // Change font size and weight
+
+        // Specific styling for each unit
+        if let range = attributedString.range(of: "\(days) days") {
+            attributedString[range].foregroundColor = .blue
+            attributedString[range].font = .system(size: 20, weight: .bold)
+        }
+
+        // Repeat for hours, minutes, seconds with different styles
+
+        return attributedString
+    }
     
 }
