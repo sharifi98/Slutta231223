@@ -7,19 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		036548C72B37425200693EE6 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036548C62B37425200693EE6 /* StatisticsView.swift */; };
 		03DE34132B37158800CBF5FA /* Slutta231223App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE34122B37158800CBF5FA /* Slutta231223App.swift */; };
 		03DE34152B37158800CBF5FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE34142B37158800CBF5FA /* ContentView.swift */; };
 		03DE34172B37158900CBF5FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03DE34162B37158900CBF5FA /* Assets.xcassets */; };
 		03DE341B2B37158900CBF5FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03DE341A2B37158900CBF5FA /* Preview Assets.xcassets */; };
+		03DE34222B37181E00CBF5FA /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE34212B37181E00CBF5FA /* CounterViewModel.swift */; };
+		03DE34242B371CDD00CBF5FA /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE34232B371CDD00CBF5FA /* InputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		036548C62B37425200693EE6 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		03DE340F2B37158800CBF5FA /* Slutta231223.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slutta231223.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03DE34122B37158800CBF5FA /* Slutta231223App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slutta231223App.swift; sourceTree = "<group>"; };
 		03DE34142B37158800CBF5FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		03DE34162B37158900CBF5FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03DE34182B37158900CBF5FA /* Slutta231223.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Slutta231223.entitlements; sourceTree = "<group>"; };
 		03DE341A2B37158900CBF5FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		03DE34212B37181E00CBF5FA /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
+		03DE34232B371CDD00CBF5FA /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,9 @@
 			children = (
 				03DE34122B37158800CBF5FA /* Slutta231223App.swift */,
 				03DE34142B37158800CBF5FA /* ContentView.swift */,
+				036548C62B37425200693EE6 /* StatisticsView.swift */,
+				03DE34232B371CDD00CBF5FA /* InputView.swift */,
+				03DE34212B37181E00CBF5FA /* CounterViewModel.swift */,
 				03DE34162B37158900CBF5FA /* Assets.xcassets */,
 				03DE34182B37158900CBF5FA /* Slutta231223.entitlements */,
 				03DE34192B37158900CBF5FA /* Preview Content */,
@@ -140,7 +149,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				03DE34152B37158800CBF5FA /* ContentView.swift in Sources */,
+				036548C72B37425200693EE6 /* StatisticsView.swift in Sources */,
+				03DE34242B371CDD00CBF5FA /* InputView.swift in Sources */,
 				03DE34132B37158800CBF5FA /* Slutta231223App.swift in Sources */,
+				03DE34222B37181E00CBF5FA /* CounterViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,9 +279,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Slutta231223/Slutta231223.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Slutta231223/Preview Content\"";
+				DEVELOPMENT_TEAM = WP99484WGY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -303,9 +317,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Slutta231223/Slutta231223.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Slutta231223/Preview Content\"";
+				DEVELOPMENT_TEAM = WP99484WGY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;

@@ -9,9 +9,26 @@ import SwiftUI
 
 @main
 struct Slutta231223App: App {
+    // Shared instance of CounterViewModel
+    
+    
+    
+    init() {
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.backgroundColor = UIColor.white
+        // Apply appearance to different states
+        UITabBar.appearance().standardAppearance = tabBarAppearance
+        if #available(iOS 15.0, *) {
+            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+        }
+    }
+    
+    @StateObject var counterViewModel = CounterViewModel()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(counterViewModel: counterViewModel)
         }
     }
 }
+
