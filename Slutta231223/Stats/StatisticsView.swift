@@ -19,7 +19,7 @@ struct StatisticsView: View {
             ZStack {
                 
                 VStack {
-                    Text("Sluttet")
+                    Text("Slutte")
                         .font(.largeTitle)
                         .bold()
                         .fontWeight(.black)
@@ -50,9 +50,9 @@ struct StatisticsView: View {
                         CounterView(counterViewModel: counterViewModel)
                         
                         VStack {
-                            Text("Penger part:")
+                            Text("Penger spart:")
                             Text("\(counterViewModel.moneySaved(), specifier: "%.2f") kr")
-                                .font(.system(size: 30))
+                                .font(.system(size: 30, weight: .bold, design: .rounded))
                                 .bold()
                         }
                     }
