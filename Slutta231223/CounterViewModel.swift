@@ -13,6 +13,7 @@ class CounterViewModel: ObservableObject {
     @Published var pricePerPackageOfSnus: Int = 84
     @Published var piecesOfSnusPerPackage: Int = 24
     @Published var quitReason: String = "Health"
+    @Published var userHasQuitted: Bool = true
     
     
     

@@ -11,6 +11,7 @@ struct ContentView: View {
     @ObservedObject var counterViewModel: CounterViewModel
     @State private var selectedTab: Int = 0
     
+    
     var body: some View {
         NavigationStack {
             
@@ -36,6 +37,7 @@ struct ContentView: View {
                                 .font(.system(size: 18))
                                 .foregroundStyle(.black)
                                 .underline()
+                            //userHasQuitted = true
                         }
                     }
                 }

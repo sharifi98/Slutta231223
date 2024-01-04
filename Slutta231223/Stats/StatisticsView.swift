@@ -10,8 +10,6 @@ import SwiftUI
 struct StatisticsView: View {
     @ObservedObject var counterViewModel: CounterViewModel
     @State private var twentyMinutes: Double = 0.0
-    // Changed to true to test things, change back to false
-    @State private var userHasQuitted: Bool = true
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     var body: some View {
@@ -27,11 +25,11 @@ struct StatisticsView: View {
                 }
                 
                 backgroundView
+                
+                
             
-                if userHasQuitted {
+                if counterViewModel.userHasQuitted {
                     quittedUserView
-
-
                 } else {
                     newUserView
                 }
@@ -47,7 +45,7 @@ struct StatisticsView: View {
             ScrollView {
                 GlassmorphicCardView {
                     VStack(alignment: .center) {
-                        CounterView(counterViewModel: counterViewModel)
+                        CounterDisplay(counterViewModel: counterViewModel)
                         
                         VStack {
                             Text("Penger spart:")
@@ -72,7 +70,7 @@ struct StatisticsView: View {
         ZStack {
             Color.gray.opacity(0.2).ignoresSafeArea()
             VStack {
-                Text("Trykk på Slutt Nå knappen øverst til høyre")
+                Text("Trykk på Slutt nå knappen øverst til høyre")
             }
         }
     }

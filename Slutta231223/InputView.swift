@@ -10,6 +10,8 @@ import SwiftUI
 struct InputView: View {
     @ObservedObject var counterViewModel: CounterViewModel
     @Environment(\.dismiss) var dismiss
+    
+    //@Binding var userHasQuitted: Bool
 
     var snusNumberRange = 1...50
     var priceRange = 20...120
@@ -30,6 +32,7 @@ struct InputView: View {
                         .overlay(.black)
                     
                     List {
+                        
                         // Number of Snus Picker
                         HStack {
                             VStack(alignment: .leading) {
@@ -126,6 +129,7 @@ struct InputView: View {
                     
                     Button("Save") {
                         dismiss()
+                        counterViewModel.userHasQuitted = true
                     }
                     .frame(width: 100)
                     .padding()
@@ -140,6 +144,7 @@ struct InputView: View {
 }
 
 struct InputView_Previews: PreviewProvider {
+    
     static var previews: some View {
         let mockCounterViewModel = CounterViewModel(
             snusFreeSince: Date(),

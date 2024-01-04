@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CounterView: View {
+struct CounterDisplay: View {
     @ObservedObject var counterViewModel: CounterViewModel
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -89,5 +89,5 @@ extension CounterViewModel {
 
 
 #Preview {
-    CounterView(counterViewModel: CounterViewModel())
+    CounterDisplay(counterViewModel: CounterViewModel())
 }
