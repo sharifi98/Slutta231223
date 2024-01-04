@@ -17,7 +17,7 @@ struct CounterDisplay: View {
                 VStack{
                     
                     Text(counterViewModel.elapsedTimeComponents().days)
-                        .font(.system(size: 30, weight: .bold, design: .rounded))
+                        .font(.system(size: 30, weight: .bold, design: .monospaced))
                     
                     
                     Text("Days")
@@ -30,7 +30,7 @@ struct CounterDisplay: View {
                 VStack{
                     HStack{
                         Text(counterViewModel.elapsedTimeComponents().hours)
-                            .font(.system(size: 30, weight: .bold, design: .rounded))
+                            .font(.system(size: 30, weight: .bold, design: .monospaced))
                     }
                     Text("Hours")
                         .font(.caption)
@@ -42,7 +42,7 @@ struct CounterDisplay: View {
                 VStack{
                     
                     Text(counterViewModel.elapsedTimeComponents().minutes)
-                        .font(.system(size: 30, weight: .bold, design: .rounded))
+                        .font(.system(size: 30, weight: .bold, design: .monospaced))
                     
                     
                     Text("Minutes")
@@ -54,7 +54,7 @@ struct CounterDisplay: View {
                 VStack {
                     
                     Text(counterViewModel.elapsedTimeComponents().seconds)
-                        .font(.system(size: 30, weight: .bold, design: .rounded))
+                        .font(.system(size: 30, weight: .bold, design: .monospaced))
                     
                     
                     Text("Seconds")

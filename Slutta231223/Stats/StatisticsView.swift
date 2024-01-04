@@ -11,7 +11,6 @@ struct StatisticsView: View {
     @ObservedObject var counterViewModel: CounterViewModel
     @State private var twentyMinutes: Double = 0.0
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-
     var body: some View {
         NavigationStack {
             ZStack {
@@ -43,18 +42,49 @@ struct StatisticsView: View {
     
     private var quittedUserView: some View {
             ScrollView {
-                GlassmorphicCardView {
+                
                     VStack(alignment: .center) {
                         CounterDisplay(counterViewModel: counterViewModel)
+                            .padding(.vertical, 20)
+                        
+                        
                         
                         VStack {
-                            Text("Penger spart:")
+                            Text("Money saved:")
                             Text("\(counterViewModel.moneySaved(), specifier: "%.2f") kr")
-                                .font(.system(size: 30, weight: .bold, design: .rounded))
+                                .font(.system(size: 50, weight: .bold, design: .default))
                                 .bold()
+                            
+                            VStack {
+                                HStack {
+                                    Text("Your savings target")
+                                        .bold()
+                                    Spacer()
+                                }
+                                ProgressView(value: counterViewModel.moneySaved(), total: counterViewModel.savingsTarget)
+                                    .tint(.green)
+                                
+                                HStack {
+                                    Button {
+                                        
+                                    } label: {
+                                        Text("Change")
+                                            .font(.body)
+                                            .underline()
+                                            .foregroundStyle(.black)
+                                    }
+                                    Spacer()
+                                    
+                                    Text("\(counterViewModel.savingsTarget, specifier: "%.0f") kr")
+                                }
+                                
+                            }
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 10)
                         }
+                        .padding(.vertical, 20)
                     }
-                }
+                    .padding(.vertical, 100)
             }
             .scrollDisabled(true)
             .padding(.vertical, 30)

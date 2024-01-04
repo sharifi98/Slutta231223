@@ -14,6 +14,7 @@ class CounterViewModel: ObservableObject {
     @Published var piecesOfSnusPerPackage: Int = 24
     @Published var quitReason: String = "Health"
     @Published var userHasQuitted: Bool = true
+    @Published var savingsTarget: Double = 10_000.0
     
     
     
@@ -37,6 +38,9 @@ class CounterViewModel: ObservableObject {
     func snusPerMinute() -> Double {
         // 24 snus per day / 24 / 60
         return Double(numberOfSnusPerDay) / 24 / 60
+    }
+    func snusPerSecond() -> Double {
+        return Double(numberOfSnusPerDay) / (24 * 60 * 60)
     }
     
     func moneySaved() -> Double {
