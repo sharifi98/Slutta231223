@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CounterDisplay: View {
+struct DaysSinceQuittingCounter: View {
     @ObservedObject var counterViewModel: CounterViewModel
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -21,7 +21,7 @@ struct CounterDisplay: View {
                     
                     
                     Text("Days")
-                        .font(.caption)
+                        .font(.caption2)
                 }
             }
             
@@ -33,7 +33,7 @@ struct CounterDisplay: View {
                             .font(.system(size: 30, weight: .bold, design: .monospaced))
                     }
                     Text("Hours")
-                        .font(.caption)
+                        .font(.caption2)
                 }
             }
             
@@ -46,7 +46,7 @@ struct CounterDisplay: View {
                     
                     
                     Text("Minutes")
-                        .font(.caption)
+                        .font(.caption2)
                 }
             }
             
@@ -58,7 +58,7 @@ struct CounterDisplay: View {
                     
                     
                     Text("Seconds")
-                        .font(.caption)
+                        .font(.caption2)
                 }
             }
         }
@@ -89,5 +89,5 @@ extension CounterViewModel {
 
 
 #Preview {
-    CounterDisplay(counterViewModel: CounterViewModel())
+    DaysSinceQuittingCounter(counterViewModel: CounterViewModel())
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct StatisticsView: View {
     @ObservedObject var counterViewModel: CounterViewModel
     @State private var twentyMinutes: Double = 0.0
+    @State private var isShowingSaveInput: Bool = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var body: some View {
         NavigationStack {
@@ -44,7 +45,8 @@ struct StatisticsView: View {
             ScrollView {
                 
                     VStack(alignment: .center) {
-                        CounterDisplay(counterViewModel: counterViewModel)
+                        Text("You quit on \(counterViewModel.quitDate.formatted(.dateTime.day().month().year()))")
+                        DaysSinceQuittingCounter(counterViewModel: counterViewModel)
                             .padding(.vertical, 20)
                         
                         
@@ -52,21 +54,24 @@ struct StatisticsView: View {
                         VStack {
                             Text("Money saved:")
                             Text("\(counterViewModel.moneySaved(), specifier: "%.2f") kr")
-                                .font(.system(size: 50, weight: .bold, design: .default))
+                                .font(.system(size: 40, weight: .bold, design: .default))
                                 .bold()
                             
                             VStack {
+                                Text("saved item")
                                 HStack {
                                     Text("Your savings target")
+                                        .padding(.vertical, 5)
                                         .bold()
                                     Spacer()
                                 }
                                 ProgressView(value: counterViewModel.moneySaved(), total: counterViewModel.savingsTarget)
                                     .tint(.green)
+                                    .scaleEffect(x: 1, y: 4, anchor: .center)
                                 
                                 HStack {
                                     Button {
-                                        
+                                        isShowingSaveInput.toggle()
                                     } label: {
                                         Text("Change")
                                             .font(.body)
@@ -77,14 +82,19 @@ struct StatisticsView: View {
                                     
                                     Text("\(counterViewModel.savingsTarget, specifier: "%.0f") kr")
                                 }
+                                .padding(.vertical, 5)
+                                
                                 
                             }
                             .padding(.vertical, 10)
-                            .padding(.horizontal, 10)
+                            .padding(.horizontal, 20)
                         }
                         .padding(.vertical, 20)
                     }
                     .padding(.vertical, 100)
+            }
+            .sheet(isPresented: $isShowingSaveInput) {
+                
             }
             .scrollDisabled(true)
             .padding(.vertical, 30)

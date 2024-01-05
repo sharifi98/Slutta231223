@@ -15,6 +15,7 @@ class CounterViewModel: ObservableObject {
     @Published var quitReason: String = "Health"
     @Published var userHasQuitted: Bool = true
     @Published var savingsTarget: Double = 10_000.0
+    @Published var savingObject: String = ""
     
     
     

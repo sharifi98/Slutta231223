@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct InputView: View {
+struct SnusUsageInputView: View {
     @ObservedObject var counterViewModel: CounterViewModel
     @Environment(\.dismiss) var dismiss
     
@@ -154,7 +154,7 @@ struct InputView_Previews: PreviewProvider {
             quitReason: "Health"
         )
         
-        InputView(counterViewModel: mockCounterViewModel)
+        SnusUsageInputView(counterViewModel: mockCounterViewModel)
             .preferredColorScheme(.light) // Show only in light mode
     }
 }

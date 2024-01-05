@@ -32,21 +32,28 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     if selectedTab == 0 {
-                        NavigationLink(destination: InputView(counterViewModel: counterViewModel)) {
-                            Text("Slutt nå!")
-                                .font(.system(size: 18))
-                                .foregroundStyle(.black)
-                                .underline()
+                        NavigationLink(destination: SnusUsageInputView(counterViewModel: counterViewModel)) {
+                            HStack {
+                                Image(systemName: "rectangle.portrait.and.arrow.forward")
+                                    .padding(.horizontal, -7)
+                                Text("Start Quitting")
+                                    .foregroundStyle(.black)
+                                    .underline()
+                            }
+                            .font(.caption)
                             //userHasQuitted = true
                         }
                     }
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
                     if selectedTab == 0 {
-                        Text("Fun facts")
-                            .font(.system(size: 18))
-                            .foregroundStyle(.black)
-                            .underline()
+                        HStack{
+                            Image(systemName: "info.circle")
+                            Text("Fun facts")
+                                .foregroundStyle(.black)
+                                .underline()
+                        }
+                        .font(.caption)
                     }
                 }
             }
