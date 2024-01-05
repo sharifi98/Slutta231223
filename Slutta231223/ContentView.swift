@@ -22,7 +22,7 @@ struct ContentView: View {
                         Label("Statistikk", systemImage: "chart.bar.xaxis")
                     }
                     .tag(0)
-
+                
                 Text("Hello")
                     .tabItem {
                         Label("Test", systemImage: "circle")
@@ -33,14 +33,15 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     if selectedTab == 0 {
                         NavigationLink(destination: SnusUsageInputView(counterViewModel: counterViewModel)) {
-                            HStack {
-                                Image(systemName: "rectangle.portrait.and.arrow.forward")
-                                    .padding(.horizontal, -7)
-                                Text("Start Quitting")
-                                    .foregroundStyle(.black)
-                                    .underline()
-                            }
-                            .font(.caption)
+                            
+                            Text("Start Quitting")
+                                .foregroundStyle(.white)
+                                .frame(height: 30)
+                                .frame(width: 130)
+                                .bold()
+                                .background(.green)
+                                .cornerRadius(20)
+                                .padding(.horizontal, -7)
                             //userHasQuitted = true
                         }
                     }
@@ -48,12 +49,15 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     if selectedTab == 0 {
                         HStack{
-                            Image(systemName: "info.circle")
-                            Text("Fun facts")
-                                .foregroundStyle(.black)
-                                .underline()
+                            Text("Tips & Tricks")
+                                .foregroundStyle(.white)
+                                .frame(height: 30)
+                                .frame(width: 130)
+                                .bold()
+                                .foregroundColor(.white)
+                                .background(Color(red: 66 / 255, green: 165 / 255, blue: 245 / 255))
+                                .cornerRadius(20)
                         }
-                        .font(.caption)
                     }
                 }
             }

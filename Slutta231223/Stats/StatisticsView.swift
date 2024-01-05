@@ -50,7 +50,6 @@ struct StatisticsView: View {
                             .padding(.vertical, 20)
                         
                         
-                        
                         VStack {
                             Text("Money saved:")
                             Text("\(counterViewModel.moneySaved(), specifier: "%.2f") kr")
@@ -58,16 +57,25 @@ struct StatisticsView: View {
                                 .bold()
                             
                             VStack {
-                                Text("saved item")
+                                
                                 HStack {
-                                    Text("Your savings target")
-                                        .padding(.vertical, 5)
-                                        .bold()
+                                    VStack{
+                                        HStack{
+                                            Text("Your savings target")
+                                                .padding(.vertical, 5)
+                                                .bold()
+                                            Spacer()
+                                        }
+                                        HStack{
+                                            Text("\(counterViewModel.savingObject)")
+                                            Spacer()
+                                        }
+                                    }
                                     Spacer()
                                 }
                                 ProgressView(value: counterViewModel.moneySaved(), total: counterViewModel.savingsTarget)
                                     .tint(.green)
-                                    .scaleEffect(x: 1, y: 4, anchor: .center)
+                                    .scaleEffect(x: 1, y: 3, anchor: .center)
                                 
                                 HStack {
                                     Button {
@@ -94,7 +102,7 @@ struct StatisticsView: View {
                     .padding(.vertical, 100)
             }
             .sheet(isPresented: $isShowingSaveInput) {
-                
+                SavingsGoalSheet(counterViewModel: counterViewModel)
             }
             .scrollDisabled(true)
             .padding(.vertical, 30)
@@ -102,13 +110,13 @@ struct StatisticsView: View {
 
 
     private var backgroundView: some View {
-        Color.orange.opacity(0.3).ignoresSafeArea()
+        Color.blue.opacity(0.2).ignoresSafeArea()
     }
 
 
     private var newUserView: some View {
         ZStack {
-            Color.gray.opacity(0.2).ignoresSafeArea()
+            Color(red: 224 / 255, green: 242 / 255, blue: 241 / 255)
             VStack {
                 Text("Trykk på Slutt nå knappen øverst til høyre")
             }

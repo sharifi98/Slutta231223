@@ -22,7 +22,7 @@ struct SnusUsageInputView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.orange.opacity(0.15).ignoresSafeArea()
+                Color.blue.opacity(0.1).ignoresSafeArea()
                 
                 VStack {
                     Image(systemName: "circle")
@@ -54,7 +54,7 @@ struct SnusUsageInputView: View {
                             .frame(width: 120)
                         }
                         .padding(.vertical, 5)
-                        .listRowBackground(Color.orange.opacity(0.15))
+                        .listRowBackground(Color.blue.opacity(0.1).ignoresSafeArea())
 
                         // Price Per Package Picker
                         HStack {
@@ -70,7 +70,7 @@ struct SnusUsageInputView: View {
                             .pickerStyle(MenuPickerStyle())
                             .frame(width: 120)
                         }
-                        .listRowBackground(Color.orange.opacity(0.15))
+                        .listRowBackground(Color.blue.opacity(0.1).ignoresSafeArea())
 
                         // Pieces Per Package Picker
                         HStack {
@@ -93,7 +93,7 @@ struct SnusUsageInputView: View {
                             .frame(width: 120)
                         }
                         .padding(.vertical, 5)
-                        .listRowBackground(Color.orange.opacity(0.15))
+                        .listRowBackground(Color.blue.opacity(0.1).ignoresSafeArea())
 
                         // Quit Date Picker
                         HStack {
@@ -102,7 +102,7 @@ struct SnusUsageInputView: View {
                                 .colorMultiply(.blue)
                         }
                         .padding(.vertical, 5)
-                        .listRowBackground(Color.orange.opacity(0.15))
+                        .listRowBackground(Color.blue.opacity(0.1).ignoresSafeArea())
 
                         // Quit Reason Picker
                         VStack {
@@ -115,14 +115,14 @@ struct SnusUsageInputView: View {
                             .pickerStyle(SegmentedPickerStyle())
                             .colorMultiply(.blue)
                         }
-                        .listRowBackground(Color.orange.opacity(0.15))
+                        .listRowBackground(Color.blue.opacity(0.1).ignoresSafeArea())
 
                         VStack {
                             Spacer()
                             Text("")
                         }
                         .padding(.bottom, 200)
-                        .listRowBackground(Color.orange.opacity(0.15))
+                        .listRowBackground(Color.blue.opacity(0.1).ignoresSafeArea())
                     }
                     .listStyle(.inset)
                     .scrollDisabled(true)

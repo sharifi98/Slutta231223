@@ -15,17 +15,34 @@ class CounterViewModel: ObservableObject {
     @Published var quitReason: String = "Health"
     @Published var userHasQuitted: Bool = true
     @Published var savingsTarget: Double = 10_000.0
-    @Published var savingObject: String = ""
+    @Published var savingObject: String = "Bitcoin"
     
     
     
     init() {
-        self.quitDate = Date.now - 86000
-        self.numberOfSnusPerDay = 24
-        self.pricePerPackageOfSnus = 89
-        self.piecesOfSnusPerPackage = 24
-        self.quitReason = "Health"
+        // Set default values
+        quitDate = Date.now - 86000  // default date
+        numberOfSnusPerDay = 12
+        pricePerPackageOfSnus = 84
+        piecesOfSnusPerPackage = 24
+        quitReason = "Health"
+        userHasQuitted = true
+        savingsTarget = 10_000.0
+        savingObject = "Bitcoin"
+
+        // Overwrite with saved data if available
+        if let savedQuitDate = UserDefaults.standard.object(forKey: "quitDate") as? Date {
+            quitDate = savedQuitDate
+        }
+        numberOfSnusPerDay = UserDefaults.standard.integer(forKey: "numberOfSnusPerDay") != 0 ? UserDefaults.standard.integer(forKey: "numberOfSnusPerDay") : numberOfSnusPerDay
+        pricePerPackageOfSnus = UserDefaults.standard.integer(forKey: "pricePerPackageOfSnus") != 0 ? UserDefaults.standard.integer(forKey: "pricePerPackageOfSnus") : pricePerPackageOfSnus
+        piecesOfSnusPerPackage = UserDefaults.standard.integer(forKey: "piecesOfSnusPerPackage") != 0 ? UserDefaults.standard.integer(forKey: "piecesOfSnusPerPackage") : piecesOfSnusPerPackage
+        quitReason = UserDefaults.standard.string(forKey: "quitReason") ?? quitReason
+        savingsTarget = UserDefaults.standard.double(forKey: "savingsTarget") != 0 ? UserDefaults.standard.double(forKey: "savingsTarget") : savingsTarget
+        savingObject = UserDefaults.standard.string(forKey: "savingObject") ?? savingObject
     }
+
+
     
     
     init(snusFreeSince: Date, numberOfSnusPerDay: Int, pricePerPackageOfSnus: Int, PiecesOfSnusPerPackage: Int, quitReason: String) {
@@ -34,6 +51,13 @@ class CounterViewModel: ObservableObject {
         self.pricePerPackageOfSnus = pricePerPackageOfSnus
         self.piecesOfSnusPerPackage = PiecesOfSnusPerPackage
         self.quitReason = quitReason
+    }
+    
+    // save the savings data
+    func saveData() {
+        UserDefaults.standard.set(savingObject, forKey: "savingObject")
+        UserDefaults.standard.set(savingsTarget, forKey: "savingsTarget")
+        print("Saving data: \(savingObject), Target: \(savingsTarget)")
     }
     
     func snusPerMinute() -> Double {
