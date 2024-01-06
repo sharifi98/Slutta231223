@@ -63,6 +63,20 @@ class CounterViewModel: ObservableObject {
     func snusPerSecond() -> Double {
         Double(numberOfSnusPerDay) / (24 * 60 * 60)
     }
+    func snusCostPerDay() -> Double {
+        return (Double(pricePerPackageOfSnus) / Double(piecesOfSnusPerPackage)) * Double(numberOfSnusPerDay)
+    }
+    
+    func snusCostPerWeek() -> Double {
+        return snusCostPerDay() * 7
+    }
+    func snusCostPerMonth() -> Double {
+        return snusCostPerDay() * 30.5
+    }
+    
+    func snusCostPerYear() -> Double {
+        return snusCostPerDay() * 365
+    }
     
     func moneySaved() -> Double {
         let costPerSnus = Double(pricePerPackageOfSnus) / Double(piecesOfSnusPerPackage)

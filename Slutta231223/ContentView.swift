@@ -14,15 +14,16 @@ struct ContentView: View {
     var body: some View {
         
             TabView(selection: $selectedTab) {
+                
                 StatisticsView(counterViewModel: counterViewModel)
                     .tabItem {
                         Label("Statistikk", systemImage: "chart.bar.xaxis")
                     }
                     .tag(0)
 
-                Text("Hello")
+                TipsView()
                     .tabItem {
-                        Label("Test", systemImage: "circle")
+                        Label("Tips", systemImage: "circle")
                     }
                     .tag(1)
             }
