@@ -70,7 +70,7 @@ struct SavingsGoalSheet: View {
                 HStack {
                     Spacer()
                     Button {
-                        counterViewModel.saveData()
+                        counterViewModel.saveDataOfSavings()
                         dismiss()
                     } label: {
                         Text("Save")

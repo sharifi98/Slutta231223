@@ -128,8 +128,10 @@ struct SnusUsageInputView: View {
                     .scrollDisabled(true)
                     
                     Button("Save") {
-                        dismiss()
+                        counterViewModel.saveAllData()
                         counterViewModel.userHasQuitted = true
+                        dismiss()
+                        
                     }
                     .frame(width: 100)
                     .padding()

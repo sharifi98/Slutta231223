@@ -39,7 +39,7 @@ struct ContentView: View {
                                 .frame(height: 30)
                                 .frame(width: 130)
                                 .bold()
-                                .background(.green)
+                                .background(Color(red: 76 / 255, green: 175 / 255, blue: 80 / 255))
                                 .cornerRadius(20)
                                 .padding(.horizontal, -7)
                             //userHasQuitted = true
@@ -55,7 +55,7 @@ struct ContentView: View {
                                 .frame(width: 130)
                                 .bold()
                                 .foregroundColor(.white)
-                                .background(Color(red: 66 / 255, green: 165 / 255, blue: 245 / 255))
+                                .background(Color(red: 33 / 255, green: 150 / 255, blue: 243 / 255))
                                 .cornerRadius(20)
                         }
                     }

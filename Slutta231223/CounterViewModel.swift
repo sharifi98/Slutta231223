@@ -53,8 +53,23 @@ class CounterViewModel: ObservableObject {
         self.quitReason = quitReason
     }
     
+    func saveAllData() {
+        UserDefaults.standard.set(quitDate, forKey: "quitDate")
+        UserDefaults.standard.set(numberOfSnusPerDay, forKey: "numberOfSnusPerDay")
+        UserDefaults.standard.set(pricePerPackageOfSnus, forKey: "pricePerPackageOfSnus")
+        UserDefaults.standard.set(piecesOfSnusPerPackage, forKey: "piecesOfSnusPerPackage")
+        UserDefaults.standard.set(quitReason, forKey: "quitReason")
+        UserDefaults.standard.set(userHasQuitted, forKey: "userHasQuitted")
+        UserDefaults.standard.set(savingsTarget, forKey: "savingsTarget")
+        UserDefaults.standard.set(savingObject, forKey: "savingObject")
+
+        print("All data saved")
+    }
+
+    
+    
     // save the savings data
-    func saveData() {
+    func saveDataOfSavings() {
         UserDefaults.standard.set(savingObject, forKey: "savingObject")
         UserDefaults.standard.set(savingsTarget, forKey: "savingsTarget")
         print("Saving data: \(savingObject), Target: \(savingsTarget)")
