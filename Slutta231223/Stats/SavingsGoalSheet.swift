@@ -14,81 +14,76 @@ struct SavingsGoalSheet: View {
     var body: some View {
         NavigationStack {
             VStack {
-                // Scrollable content
-                ScrollView {
-                    VStack {
-                        // Placeholder VStack for potential future content
-                    }
-                    .padding(.bottom, 50)
+                goalInputSection
+                saveButton
+            }
+            .navigationTitle("Savings Goal")
+            .toolbar {
+                cancelButton
+            }
+        }
+    }
 
-                    // Section for entering the saving object and target
-                    VStack {
-                        VStack(alignment: .leading) {
-                            Text("What do you want to save for?")
-                            
-                            TextField("Input", text: $counterViewModel.savingObject)
-                                .foregroundStyle(Color(red: 102 / 255, green: 187 / 255, blue: 106 / 255))
-                        }
-                        .bold()
-                        .padding(.horizontal, 10)
-                        
-                        Divider()
-                            .frame(width: 375)
+    // MARK: - Subviews
 
-                        VStack(alignment: .leading) {
-                            Text("How much do you need?")
-                            HStack {
-                                TextField("kr", value: $counterViewModel.savingsTarget, format: .number)
-                                Text("kr")
-                                    .padding(.leading, -8) // Adjust this padding to align the label as needed
-                                Spacer()
-                            }
-                            .foregroundStyle(Color(red: 102 / 255, green: 187 / 255, blue: 106 / 255))
-                        }
-                        .bold()
-                        .padding(.horizontal, 10)
-                        
-                        Divider()
-                            .frame(width: 375)
-                    }
-                }
-                .scrollDisabled(true)
-                .toolbar {
-                    // Toolbar item for cancel button
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button {
-                            dismiss()
-                        } label: {
-                            Text("Cancel")
-                                .foregroundStyle(.black)
-                                .underline()
-                        }
-                    }
-                }
+    private var goalInputSection: some View {
+        ScrollView {
+            VStack(spacing: 20) {
+                TextField("What do you want to save for?", text: $counterViewModel.savingObject)
+                    .textFieldStyle()
 
-                // Button at the bottom right
                 HStack {
-                    Spacer()
-                    Button {
-                        counterViewModel.saveDataOfSavings()
-                        dismiss()
-                    } label: {
-                        Text("Save")
-                            .padding()
-                            .frame(height: 40)
-                            .frame(width: 100)
-                            .bold()
-                            .foregroundColor(.white)
-                            .background(.green)
-                            .cornerRadius(50)
-                            
-                    }
-                    .padding()
+                    TextField("kr", value: $counterViewModel.savingsTarget, format: .number)
+                    Text("kr")
                 }
+                .textFieldStyle()
+            }
+            .padding()
+        }
+    }
+
+    private var saveButton: some View {
+        Button("Save") {
+            counterViewModel.saveDataOfSavings()
+            dismiss()
+        }
+        .buttonStyle()
+        .padding(.top, 20)
+    }
+
+    private var cancelButton: some ToolbarContent {
+        ToolbarItem(placement: .navigationBarTrailing) {
+            Button("Cancel") {
+                dismiss()
             }
         }
     }
 }
+
+// MARK: - Custom Styles
+
+extension View {
+    func textFieldStyle() -> some View {
+        self
+            .padding()
+            .background(Color.gray.opacity(0.2))
+            .cornerRadius(10)
+            .foregroundColor(.green)
+            .bold()
+    }
+
+    func buttonStyle() -> some View {
+        self
+            .padding()
+            .frame(height: 40)
+            .frame(maxWidth: 150)
+            .background(Color.green)
+            .foregroundColor(.white)
+            .cornerRadius(20)
+            .bold()
+    }
+}
+
 
 #Preview {
     NavigationStack {

@@ -85,7 +85,7 @@ struct StatisticsView: View {
                                 
                                 Text("\(counterViewModel.savingsTarget, specifier: "%.0f") kr")
                             }
-                            .padding(.top, 5)
+                            .padding(.vertical, 5)
                             Button {
                                 isShowingSaveInput.toggle()
                             } label: {
