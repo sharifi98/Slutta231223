@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0336E0D12B4832250069C212 /* SavingsGoalSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336E0D02B4832250069C212 /* SavingsGoalSheet.swift */; };
+		0336E0D32B4987360069C212 /* SavingPerInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336E0D22B4987360069C212 /* SavingPerInterval.swift */; };
 		036548C72B37425200693EE6 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036548C62B37425200693EE6 /* StatisticsView.swift */; };
 		0397E5B42B38D65100D615C1 /* DaysSinceQuittingCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0397E5B32B38D65100D615C1 /* DaysSinceQuittingCounter.swift */; };
 		0397E5B72B38DB2300D615C1 /* TestProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0397E5B62B38DB2300D615C1 /* TestProgress.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		0336E0D02B4832250069C212 /* SavingsGoalSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsGoalSheet.swift; sourceTree = "<group>"; };
+		0336E0D22B4987360069C212 /* SavingPerInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingPerInterval.swift; sourceTree = "<group>"; };
 		036548C62B37425200693EE6 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		0397E5B32B38D65100D615C1 /* DaysSinceQuittingCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysSinceQuittingCounter.swift; sourceTree = "<group>"; };
 		0397E5B62B38DB2300D615C1 /* TestProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProgress.swift; sourceTree = "<group>"; };
@@ -47,12 +49,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0336E0D42B4987690069C212 /* SavingsCard */ = {
+			isa = PBXGroup;
+			children = (
+				0336E0D02B4832250069C212 /* SavingsGoalSheet.swift */,
+				0336E0D22B4987360069C212 /* SavingPerInterval.swift */,
+			);
+			path = SavingsCard;
+			sourceTree = "<group>";
+		};
 		0397E5B52B38D91600D615C1 /* Stats */ = {
 			isa = PBXGroup;
 			children = (
 				036548C62B37425200693EE6 /* StatisticsView.swift */,
-				0336E0D02B4832250069C212 /* SavingsGoalSheet.swift */,
 				0397E5B32B38D65100D615C1 /* DaysSinceQuittingCounter.swift */,
+				0336E0D42B4987690069C212 /* SavingsCard */,
 				0397E5B82B38DD8B00D615C1 /* Achievements.swift */,
 			);
 			path = Stats;
@@ -172,6 +183,7 @@
 				0397E5B92B38DD8B00D615C1 /* Achievements.swift in Sources */,
 				036548C72B37425200693EE6 /* StatisticsView.swift in Sources */,
 				03DE34242B371CDD00CBF5FA /* SnusUsageInputView.swift in Sources */,
+				0336E0D32B4987360069C212 /* SavingPerInterval.swift in Sources */,
 				0336E0D12B4832250069C212 /* SavingsGoalSheet.swift in Sources */,
 				03DE34132B37158800CBF5FA /* Slutta231223App.swift in Sources */,
 				03DE34222B37181E00CBF5FA /* CounterViewModel.swift in Sources */,

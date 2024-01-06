@@ -62,7 +62,7 @@ struct DaysSinceQuittingCounter: View {
                 }
             }
         }
-        .foregroundStyle(.black)
+        .foregroundStyle(.white)
         .onReceive(timer) { _ in
             // This will cause the view to update every second
             self.counterViewModel.objectWillChange.send()

@@ -13,93 +13,141 @@ struct StatisticsView: View {
     @State private var isShowingSaveInput: Bool = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var body: some View {
-        NavigationStack {
+        
             ZStack {
                 
+                //backgroundView
+                
                 VStack {
-                    Text("Slutte")
-                        .font(.largeTitle)
-                        .bold()
-                        .fontWeight(.black)
-                    Spacer()
+                    
+                    if counterViewModel.userHasQuitted {
+                        quittedUserView
+                    } else {
+                        newUserView
+                    }
                 }
                 
-                backgroundView
                 
                 
-                
-                if counterViewModel.userHasQuitted {
-                    quittedUserView
-                } else {
-                    newUserView
-                }
             }
-        }
+            .background(VStack(spacing: .zero) { Color.blue; Color.white }).ignoresSafeArea(.all)
+        
         .onReceive(timer) { _ in
             self.counterViewModel.objectWillChange.send() // This will cause the view to redraw
         }
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarTitleDisplayMode(.large)
+    }
+    
+    @ViewBuilder
+    private var quittingButton: some View {
+        
+            NavigationLink(destination: SnusUsageInputView(counterViewModel: counterViewModel)) {
+                Text("Start Quitting")
+                    .styledButtonBackground(color: Color(red: 76 / 255, green: 175 / 255, blue: 80 / 255))
+            }
+    }
+
+    
+    @ViewBuilder
+    private var tipsAndTricksButton: some View {
+        
+            Text("Tips & Tricks")
+                .styledButtonBackground(color: Color(red: 33 / 255, green: 150 / 255, blue: 243 / 255))
     }
     
     private var quittedUserView: some View {
         ScrollView {
             
+            HStack {
+                tipsAndTricksButton
+                Spacer()
+                quittingButton
+            }
+            .padding(.horizontal, 5)
+            
             VStack(alignment: .center) {
                 Text("You quit on \(counterViewModel.quitDate.formatted(.dateTime.day().month().year()))")
+                    .foregroundStyle(.white)
                 DaysSinceQuittingCounter(counterViewModel: counterViewModel)
                     .padding(.vertical, 20)
                 
                 
                 VStack {
                     Text("Money saved:")
+                        .foregroundStyle(.white)
                     Text("\(counterViewModel.moneySaved(), specifier: "%.2f") kr")
+                        .foregroundStyle(.white)
                         .font(.system(size: 40, weight: .bold, design: .default))
                         .bold()
                     
-                    VStack {
-                        
-                        HStack {
-                            VStack{
-                                HStack{
+                    ZStack {
+                        // Background card
+                        RoundedRectangle(cornerRadius: 20.0)
+                            .fill(Color.white)
+                            .shadow(radius: 10) // Adds a shadow for a subtle 3D effect
+                            .frame(width: 375, height: 200)
+
+                        // Content of the card
+                        VStack {
+                            // Savings target label and value
+                            HStack {
+                                VStack(alignment: .leading) {
                                     Text("Your savings target")
-                                        .padding(.vertical, 5)
+                                        .font(.headline)
+                                        .padding(.bottom, 2)
+                                    
+                                    Text("\(counterViewModel.savingObject)")
+                                        .font(.title2)
+                                }
+                                Spacer()
+                            }
+                            
+
+                            
+                            ProgressView(value: counterViewModel.moneySaved(), total: counterViewModel.savingsTarget)
+                                .tint(.green)
+                                .scaleEffect(x: 1, y: 3, anchor: .center)
+                                .padding(.vertical)
+
+                            
+                            VStack(alignment: .leading) {
+                                HStack {
+                                    Text("\(counterViewModel.moneySaved(), specifier: "%.2f") kr")
                                         .bold()
                                     Spacer()
+                                
+                                    
+                                    Spacer()
+                                    Text("\(counterViewModel.savingsTarget, specifier: "%.0f") kr")
+                                        .foregroundColor(.gray)
                                 }
-                                HStack{
-                                    Text("\(counterViewModel.savingObject)")
+                                .padding(.horizontal, 2)
+
+                                // Change button
+                                HStack(alignment: .center){
+                                    Button("Change") {
+                                        isShowingSaveInput.toggle()
+                                    }
+                                    .buttonStyle(.bordered)
+                                    .padding(.top, 2)
+                                    
+                                    Spacer()
+                                    
+                                    Button("See more") {
+                                        
+                                    }
+                                    .foregroundStyle(.blue)
+                                    
+                                    Spacer()
                                     Spacer()
                                 }
                             }
-                            Spacer()
                         }
-                        ProgressView(value: counterViewModel.moneySaved(), total: counterViewModel.savingsTarget)
-                            .tint(.green)
-                            .scaleEffect(x: 1, y: 3, anchor: .center)
-                        
-                        VStack(alignment: .leading){
-                            HStack {
-                                Text("\(counterViewModel.moneySaved(), specifier: "%.2f") kr")
-                                
-                                Spacer()
-                                
-                                Text("\(counterViewModel.savingsTarget, specifier: "%.0f") kr")
-                            }
-                            .padding(.vertical, 5)
-                            Button {
-                                isShowingSaveInput.toggle()
-                            } label: {
-                                Text("Change")
-                                    .font(.body)
-                                    .underline()
-                                    .foregroundStyle(.black)
-                            }
-                        }
-                        
-                        
+                        .padding(.horizontal, 30)
+                        .padding(.vertical, 10)
                     }
-                    .padding(.vertical, 10)
-                    .padding(.horizontal, 20)
+                    .foregroundColor(.black)
+
                 }
                 .padding(.vertical, 20)
             }
@@ -108,14 +156,26 @@ struct StatisticsView: View {
         .sheet(isPresented: $isShowingSaveInput) {
             SavingsGoalSheet(counterViewModel: counterViewModel)
         }
-        .scrollDisabled(true)
         .padding(.vertical, 30)
     }
     
     
     private var backgroundView: some View {
-        Color.blue.opacity(0.2).ignoresSafeArea()
+        GeometryReader { geometry in
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    Color.blue, // Start with the purple color you want
+                    Color.white // Finally, complete white
+                ]),
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .frame(maxHeight: .infinity)
+            .ignoresSafeArea()
+        }
     }
+
+
     
     
     private var newUserView: some View {

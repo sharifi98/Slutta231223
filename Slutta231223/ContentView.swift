@@ -12,7 +12,7 @@ struct ContentView: View {
     @State private var selectedTab: Int = 0
 
     var body: some View {
-        NavigationStack {
+        
             TabView(selection: $selectedTab) {
                 StatisticsView(counterViewModel: counterViewModel)
                     .tabItem {
@@ -26,17 +26,10 @@ struct ContentView: View {
                     }
                     .tag(1)
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    quittingButton
-                }
-                ToolbarItem(placement: .navigationBarLeading) {
-                    tipsAndTricksButton
-                }
-            }
-        }
-        .tint(.red.opacity(0.8))
+        
+        
     }
+
 
     @ViewBuilder
     private var quittingButton: some View {
@@ -71,6 +64,12 @@ extension View {
             .cornerRadius(20)
     }
 }
+
+
+
+
+
+
 
 
 #Preview {
