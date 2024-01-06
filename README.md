@@ -1,4 +1,4 @@
-# Slutta231223 - Snus Quitting App
+# Slutte - Snus Quitting App
 
 Welcome to Slutta231223, an app dedicated to helping individuals quit snus effectively. Our goal is to provide a supportive and informative platform to track your journey towards a snus-free life.
 
