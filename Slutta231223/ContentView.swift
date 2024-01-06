@@ -10,19 +10,16 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var counterViewModel: CounterViewModel
     @State private var selectedTab: Int = 0
-    
-    
+
     var body: some View {
         NavigationStack {
-            
             TabView(selection: $selectedTab) {
-                
                 StatisticsView(counterViewModel: counterViewModel)
                     .tabItem {
                         Label("Statistikk", systemImage: "chart.bar.xaxis")
                     }
                     .tag(0)
-                
+
                 Text("Hello")
                     .tabItem {
                         Label("Test", systemImage: "circle")
@@ -31,44 +28,49 @@ struct ContentView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    if selectedTab == 0 {
-                        NavigationLink(destination: SnusUsageInputView(counterViewModel: counterViewModel)) {
-                            
-                            Text("Start Quitting")
-                                .foregroundStyle(.white)
-                                .frame(height: 30)
-                                .frame(width: 130)
-                                .bold()
-                                .background(Color(red: 76 / 255, green: 175 / 255, blue: 80 / 255))
-                                .cornerRadius(20)
-                                .padding(.horizontal, -7)
-                            //userHasQuitted = true
-                        }
-                    }
+                    quittingButton
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
-                    if selectedTab == 0 {
-                        HStack{
-                            Text("Tips & Tricks")
-                                .foregroundStyle(.white)
-                                .frame(height: 30)
-                                .frame(width: 130)
-                                .bold()
-                                .foregroundColor(.white)
-                                .background(Color(red: 33 / 255, green: 150 / 255, blue: 243 / 255))
-                                .cornerRadius(20)
-                        }
-                    }
+                    tipsAndTricksButton
                 }
             }
         }
         .tint(.red.opacity(0.8))
-        
+    }
+
+    @ViewBuilder
+    private var quittingButton: some View {
+        if selectedTab == 0 {
+            NavigationLink(destination: SnusUsageInputView(counterViewModel: counterViewModel)) {
+                Text("Start Quitting")
+                    .styledButtonBackground(color: Color(red: 76 / 255, green: 175 / 255, blue: 80 / 255))
+            }
+        }
+    }
+
+    
+    @ViewBuilder
+    private var tipsAndTricksButton: some View {
+        if selectedTab == 0 {
+            Text("Tips & Tricks")
+                .styledButtonBackground(color: Color(red: 33 / 255, green: 150 / 255, blue: 243 / 255))
+        }
     }
 }
 
-
-
+// Extension to provide styling for buttons.
+extension View {
+    func styledButtonBackground(color: Color) -> some View {
+        self
+            .foregroundStyle(.white)
+            .frame(height: 30)
+            .frame(width: 130)
+            .bold()
+            .foregroundColor(.white)
+            .background(color)
+            .cornerRadius(20)
+    }
+}
 
 
 #Preview {

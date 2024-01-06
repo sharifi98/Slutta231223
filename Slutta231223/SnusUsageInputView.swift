@@ -152,7 +152,7 @@ struct InputView_Previews: PreviewProvider {
             snusFreeSince: Date(),
             numberOfSnusPerDay: 20,
             pricePerPackageOfSnus: 84,
-            PiecesOfSnusPerPackage: 24,
+            piecesOfSnusPerPackage: 24,
             quitReason: "Health"
         )
         
