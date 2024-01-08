@@ -45,6 +45,7 @@ struct StatisticsView: View {
                     quittedUserView
                 } else {
                     newUserView
+                        .padding(.top, 50)
                 }
             }
             .padding(.top, 30)
@@ -204,9 +205,16 @@ struct StatisticsView: View {
     
     private var newUserView: some View {
         ZStack {
-            Color(red: 224 / 255, green: 242 / 255, blue: 241 / 255)
-            VStack {
-                Text("Trykk på Slutt nå knappen øverst til høyre")
+            ScrollView{
+                Spacer()
+                VStack {
+                    Text("Tap the Start Quitting button to begin")
+                        .font(.system(size: 20))
+                        .bold()
+                        .foregroundStyle(.white)
+                    
+                    quittingButton
+                }
             }
         }
     }

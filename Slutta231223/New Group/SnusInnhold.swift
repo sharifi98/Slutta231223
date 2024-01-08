@@ -18,14 +18,12 @@ struct SnusInnhold: View {
                     .cornerRadius(20.0)
                     .padding([.top, .horizontal])
 
-                HStack(alignment: .center){
-                    Spacer()
+                
                     Text("This is what you ingest when you use snus.")
                         .bold()
                         .font(.title)
                         .padding(.top)
-                    Spacer()
-                }
+
                     
 
                 Text("Snus contains several harmful substances. Below, you can read about some of the most important of these substances.")
@@ -42,30 +40,33 @@ struct SnusInnhold: View {
                             Text("• The childhood and adolescent years are a vulnerable time for the development of nicotine dependence.")
                             Text("• The use of nicotine-containing products in childhood and adolescent years can also have an adverse effect on brain development, which is not fully developed until the mid-20s.")
                         }
-                        .padding(.vertical, 10)
+                        
                     }
-                    .padding(.bottom)
+                    
+                    Divider()
                     
                     DisclosureGroup("Carcinogenic Substances") {
                         VStack(alignment: .leading) {
                             Text("• Tobacco-specific nitrosamines (TSNAs) are formed from substances that occur naturally in the tobacco plant.")
                             Text("• Two commonly occurring tobacco-specific nitrosamines found in snus are abbreviated as NNK and NNN. These are carcinogenic.")
                         }
-                        .padding(.vertical, 10)
                     }
-                    .padding(.bottom)
+                    
+                    Divider()
                     
                     DisclosureGroup("Other Harmful Substances Found in Snus") {
                         VStack(alignment: .leading) {
                             Text("• Other harmful substances that can also be found in snus include heavy metals, arsenic compounds (arsenic), polycyclic aromatic hydrocarbons (PAHs), fungal toxins (mycotoxins), and residues of pesticides.")
                             Text("• The harmful health effects of these substances when using snus are uncertain.")
                         }
-                        .padding(.vertical, 10)
                     }
-                    .padding(.bottom)
+                    
+                    Divider()
+                        .padding(.bottom, 150)
                 }
+                
+                
 
-                Divider()
             }
             .padding(.horizontal)
         }

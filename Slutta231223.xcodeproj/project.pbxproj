@@ -14,6 +14,7 @@
 		0397E5B72B38DB2300D615C1 /* TestProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0397E5B62B38DB2300D615C1 /* TestProgress.swift */; };
 		0397E5B92B38DD8B00D615C1 /* Achievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0397E5B82B38DD8B00D615C1 /* Achievements.swift */; };
 		039B0A2C2B4A239900E6ED48 /* SnusInnhold.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039B0A2B2B4A239900E6ED48 /* SnusInnhold.swift */; };
+		039B0A2E2B4C0D6000E6ED48 /* Fordeler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039B0A2D2B4C0D6000E6ED48 /* Fordeler.swift */; };
 		03CE72972B49F05D00F338B9 /* MotivationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE72962B49F05D00F338B9 /* MotivationCard.swift */; };
 		03CE72992B4A162000F338B9 /* TipsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE72982B4A162000F338B9 /* TipsListView.swift */; };
 		03DE34132B37158800CBF5FA /* Slutta231223App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE34122B37158800CBF5FA /* Slutta231223App.swift */; };
@@ -22,6 +23,7 @@
 		03DE341B2B37158900CBF5FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03DE341A2B37158900CBF5FA /* Preview Assets.xcassets */; };
 		03DE34222B37181E00CBF5FA /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE34212B37181E00CBF5FA /* CounterViewModel.swift */; };
 		03DE34242B371CDD00CBF5FA /* SnusUsageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE34232B371CDD00CBF5FA /* SnusUsageInputView.swift */; };
+		03FDA5EA2B4C3E60006C4A14 /* CravingTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FDA5E92B4C3E60006C4A14 /* CravingTipsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,7 @@
 		0397E5B62B38DB2300D615C1 /* TestProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProgress.swift; sourceTree = "<group>"; };
 		0397E5B82B38DD8B00D615C1 /* Achievements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievements.swift; sourceTree = "<group>"; };
 		039B0A2B2B4A239900E6ED48 /* SnusInnhold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnusInnhold.swift; sourceTree = "<group>"; };
+		039B0A2D2B4C0D6000E6ED48 /* Fordeler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fordeler.swift; sourceTree = "<group>"; };
 		03CE72962B49F05D00F338B9 /* MotivationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationCard.swift; sourceTree = "<group>"; };
 		03CE72982B4A162000F338B9 /* TipsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsListView.swift; sourceTree = "<group>"; };
 		03DE340F2B37158800CBF5FA /* Slutta231223.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slutta231223.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +45,7 @@
 		03DE341A2B37158900CBF5FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		03DE34212B37181E00CBF5FA /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
 		03DE34232B371CDD00CBF5FA /* SnusUsageInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnusUsageInputView.swift; sourceTree = "<group>"; };
+		03FDA5E92B4C3E60006C4A14 /* CravingTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CravingTipsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +84,9 @@
 			isa = PBXGroup;
 			children = (
 				03CE72982B4A162000F338B9 /* TipsListView.swift */,
+				039B0A2D2B4C0D6000E6ED48 /* Fordeler.swift */,
 				039B0A2B2B4A239900E6ED48 /* SnusInnhold.swift */,
+				03FDA5E92B4C3E60006C4A14 /* CravingTipsView.swift */,
 			);
 			path = "New Group";
 			sourceTree = "<group>";
@@ -196,7 +202,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				039B0A2E2B4C0D6000E6ED48 /* Fordeler.swift in Sources */,
 				03CE72992B4A162000F338B9 /* TipsListView.swift in Sources */,
+				03FDA5EA2B4C3E60006C4A14 /* CravingTipsView.swift in Sources */,
 				03DE34152B37158800CBF5FA /* ContentView.swift in Sources */,
 				0397E5B92B38DD8B00D615C1 /* Achievements.swift in Sources */,
 				036548C72B37425200693EE6 /* StatisticsView.swift in Sources */,

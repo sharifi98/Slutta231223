@@ -19,14 +19,14 @@ class CounterViewModel: ObservableObject {
     
     init() {
         // Load initial or saved values
-        quitDate = UserDefaults.standard.object(forKey: "quitDate") as? Date ?? Date.now - 86000
-        numberOfSnusPerDay = UserDefaults.standard.integer(forKey: "numberOfSnusPerDay") != 0 ? UserDefaults.standard.integer(forKey: "numberOfSnusPerDay") : 12
+        quitDate = UserDefaults.standard.object(forKey: "quitDate") as? Date ?? Date.now
+        numberOfSnusPerDay = UserDefaults.standard.integer(forKey: "numberOfSnusPerDay") != 0 ? UserDefaults.standard.integer(forKey: "numberOfSnusPerDay") : 20
         pricePerPackageOfSnus = UserDefaults.standard.integer(forKey: "pricePerPackageOfSnus") != 0 ? UserDefaults.standard.integer(forKey: "pricePerPackageOfSnus") : 84
         piecesOfSnusPerPackage = UserDefaults.standard.integer(forKey: "piecesOfSnusPerPackage") != 0 ? UserDefaults.standard.integer(forKey: "piecesOfSnusPerPackage") : 24
         quitReason = UserDefaults.standard.string(forKey: "quitReason") ?? "Health"
-        userHasQuitted = true // Assuming default value, adjust if needed
+        userHasQuitted = UserDefaults.standard.bool(forKey: "userHasQuitted")
         savingsTarget = UserDefaults.standard.double(forKey: "savingsTarget") != 0 ? UserDefaults.standard.double(forKey: "savingsTarget") : 10_000.0
-        savingObject = UserDefaults.standard.string(forKey: "savingObject") ?? "Bitcoin"
+        savingObject = UserDefaults.standard.string(forKey: "savingObject") ?? "iPhone 16"
     }
 
     init(snusFreeSince: Date, numberOfSnusPerDay: Int, pricePerPackageOfSnus: Int, piecesOfSnusPerPackage: Int, quitReason: String) {
@@ -49,6 +49,7 @@ class CounterViewModel: ObservableObject {
         UserDefaults.standard.set(userHasQuitted, forKey: "userHasQuitted")
         UserDefaults.standard.set(savingsTarget, forKey: "savingsTarget")
         UserDefaults.standard.set(savingObject, forKey: "savingObject")
+        print(userHasQuitted)
     }
     
     func saveDataOfSavings() {

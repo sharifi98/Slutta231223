@@ -31,7 +31,7 @@ struct TipsListView: View {
                                 .multilineTextAlignment(.leading)
 
                             NavigationLink {
-                                SnusInnhold()
+                                Fordeler()
                             } label: {
                                 Text("Health gains")
                                     .underline()
@@ -89,7 +89,7 @@ struct TipsListView: View {
                             
 
                             NavigationLink {
-                                //CravingsManagementView()
+                                CravingTipsView()
                             } label: {
                                 Text("Learn Techniques")
                                     .underline()
