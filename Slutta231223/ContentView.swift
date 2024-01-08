@@ -13,34 +13,27 @@ struct ContentView: View {
 
     var body: some View {
         
+        
             TabView(selection: $selectedTab) {
-                
-                StatisticsView(counterViewModel: counterViewModel)
-                    .tabItem {
-                        Label("Statistikk", systemImage: "chart.bar.xaxis")
-                    }
-                    .tag(0)
+                    
+                    StatisticsView(counterViewModel: counterViewModel)
+                        .tabItem {
+                            Label("Statistics", systemImage: "chart.bar.xaxis")
+                        }
+                        .tag(0)
 
-                TipsView()
-                    .tabItem {
-                        Label("Tips", systemImage: "circle")
-                    }
-                    .tag(1)
+                    TipsListView()
+                        .tabItem {
+                            Label("Tips", systemImage: "warninglight.fill")
+                        }
+                        .tag(1)
             }
+
         
         
     }
 
 
-    @ViewBuilder
-    private var quittingButton: some View {
-        if selectedTab == 0 {
-            NavigationLink(destination: SnusUsageInputView(counterViewModel: counterViewModel)) {
-                Text("Start Quitting")
-                    .styledButtonBackground(color: Color(red: 76 / 255, green: 175 / 255, blue: 80 / 255))
-            }
-        }
-    }
 
     
     @ViewBuilder
@@ -62,7 +55,7 @@ extension View {
             .bold()
             .foregroundColor(.white)
             .background(color)
-            .cornerRadius(20)
+            .cornerRadius(10)
     }
 }
 

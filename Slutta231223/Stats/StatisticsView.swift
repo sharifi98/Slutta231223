@@ -15,13 +15,15 @@ struct StatisticsView: View {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        ZStack {
-            fixedBackground
-            scrollableContent
+        NavigationStack {
+            ZStack {
+                fixedBackground
+                scrollableContent
+            }
+            .edgesIgnoringSafeArea(.all)
+            .onReceive(timer) { _ in
+                self.counterViewModel.objectWillChange.send()
         }
-        .edgesIgnoringSafeArea(.all)
-        .onReceive(timer) { _ in
-            self.counterViewModel.objectWillChange.send()
         }
     }
 
@@ -71,7 +73,7 @@ struct StatisticsView: View {
         ScrollView {
             
             HStack {
-                tipsAndTricksButton
+                //tipsAndTricksButton
                 Spacer()
                 quittingButton
             }
