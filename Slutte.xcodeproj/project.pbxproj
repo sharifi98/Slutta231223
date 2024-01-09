@@ -17,7 +17,7 @@
 		039B0A2E2B4C0D6000E6ED48 /* Fordeler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039B0A2D2B4C0D6000E6ED48 /* Fordeler.swift */; };
 		03CE72972B49F05D00F338B9 /* MotivationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE72962B49F05D00F338B9 /* MotivationCard.swift */; };
 		03CE72992B4A162000F338B9 /* TipsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE72982B4A162000F338B9 /* TipsListView.swift */; };
-		03DE34132B37158800CBF5FA /* Slutta231223App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE34122B37158800CBF5FA /* Slutta231223App.swift */; };
+		03DE34132B37158800CBF5FA /* SlutteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE34122B37158800CBF5FA /* SlutteApp.swift */; };
 		03DE34152B37158800CBF5FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE34142B37158800CBF5FA /* ContentView.swift */; };
 		03DE34172B37158900CBF5FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03DE34162B37158900CBF5FA /* Assets.xcassets */; };
 		03DE341B2B37158900CBF5FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03DE341A2B37158900CBF5FA /* Preview Assets.xcassets */; };
@@ -38,7 +38,7 @@
 		03CE72962B49F05D00F338B9 /* MotivationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationCard.swift; sourceTree = "<group>"; };
 		03CE72982B4A162000F338B9 /* TipsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsListView.swift; sourceTree = "<group>"; };
 		03DE340F2B37158800CBF5FA /* Slutta231223.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slutta231223.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		03DE34122B37158800CBF5FA /* Slutta231223App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slutta231223App.swift; sourceTree = "<group>"; };
+		03DE34122B37158800CBF5FA /* SlutteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlutteApp.swift; sourceTree = "<group>"; };
 		03DE34142B37158800CBF5FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		03DE34162B37158900CBF5FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03DE34182B37158900CBF5FA /* Slutta231223.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Slutta231223.entitlements; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		03DE34112B37158800CBF5FA /* Slutta231223 */ = {
 			isa = PBXGroup;
 			children = (
-				03DE34122B37158800CBF5FA /* Slutta231223App.swift */,
+				03DE34122B37158800CBF5FA /* SlutteApp.swift */,
 				03DE34142B37158800CBF5FA /* ContentView.swift */,
 				039B0A2A2B4A237100E6ED48 /* Tips and Advice */,
 				0397E5B52B38D91600D615C1 /* Stats */,
@@ -167,7 +167,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 03DE340A2B37158800CBF5FA /* Build configuration list for PBXProject "Slutta231223" */;
+			buildConfigurationList = 03DE340A2B37158800CBF5FA /* Build configuration list for PBXProject "Slutte" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -213,7 +213,7 @@
 				03CE72972B49F05D00F338B9 /* MotivationCard.swift in Sources */,
 				0336E0D12B4832250069C212 /* SavingsGoalSheet.swift in Sources */,
 				039B0A2C2B4A239900E6ED48 /* SnusInnhold.swift in Sources */,
-				03DE34132B37158800CBF5FA /* Slutta231223App.swift in Sources */,
+				03DE34132B37158800CBF5FA /* SlutteApp.swift in Sources */,
 				03DE34222B37181E00CBF5FA /* CounterViewModel.swift in Sources */,
 				0397E5B42B38D65100D615C1 /* DaysSinceQuittingCounter.swift in Sources */,
 				0397E5B72B38DB2300D615C1 /* TestProgress.swift in Sources */,
@@ -416,7 +416,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		03DE340A2B37158800CBF5FA /* Build configuration list for PBXProject "Slutta231223" */ = {
+		03DE340A2B37158800CBF5FA /* Build configuration list for PBXProject "Slutte" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03DE341C2B37158900CBF5FA /* Debug */,

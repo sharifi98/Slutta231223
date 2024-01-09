@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct Slutta231223App: App {
+struct SlutteApp: App {
     // Shared instance of CounterViewModel
     
     
