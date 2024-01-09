@@ -30,7 +30,7 @@ struct StatisticsView: View {
     private var fixedBackground: some View {
         GeometryReader { geometry in
                     VStack(spacing: 0) {
-                        Color(red: 60 / 255, green: 80 / 255, blue: 20 / 255)
+                        Color(red: 111 / 255.0, green: 110 / 255.0, blue: 85 / 255.0)
                             .frame(height: geometry.size.height * 0.7) // 70% height for blue
                         Color.gray.opacity(0.3)
                             .frame(height: geometry.size.height * 0.4) // 40% height for white
@@ -59,8 +59,8 @@ struct StatisticsView: View {
         NavigationLink(destination: SnusUsageInputView(counterViewModel: counterViewModel)) {
             
             if counterViewModel.userHasQuitted {
-                Text("Edit") 
-                    .styledButtonBackground(color: .gray)
+                Text("Edit")
+                    .styledButtonBackground(color: .blue)
             } else {
                 Text("Get started")
                     .styledButtonBackground(color: Color(red: 76 / 255, green: 175 / 255, blue: 80 / 255))
