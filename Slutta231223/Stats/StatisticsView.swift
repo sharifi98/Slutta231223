@@ -30,7 +30,7 @@ struct StatisticsView: View {
     private var fixedBackground: some View {
         GeometryReader { geometry in
                     VStack(spacing: 0) {
-                        Color.blue
+                        Color(red: 60 / 255, green: 80 / 255, blue: 20 / 255)
                             .frame(height: geometry.size.height * 0.7) // 70% height for blue
                         Color.gray.opacity(0.3)
                             .frame(height: geometry.size.height * 0.4) // 40% height for white
@@ -57,8 +57,14 @@ struct StatisticsView: View {
     private var quittingButton: some View {
         
         NavigationLink(destination: SnusUsageInputView(counterViewModel: counterViewModel)) {
-            Text("Start Quitting")
-                .styledButtonBackground(color: Color(red: 76 / 255, green: 175 / 255, blue: 80 / 255))
+            
+            if counterViewModel.userHasQuitted {
+                Text("Edit") 
+                    .styledButtonBackground(color: .gray)
+            } else {
+                Text("Get started")
+                    .styledButtonBackground(color: Color(red: 76 / 255, green: 175 / 255, blue: 80 / 255))
+            }
         }
     }
     
@@ -107,12 +113,23 @@ struct StatisticsView: View {
                             // Savings target label and value
                             HStack {
                                 VStack(alignment: .leading) {
-                                    Text("Your savings target")
-                                        .font(.headline)
-                                        .padding(.bottom, 2)
+                                
+                                        Text("Your savings target")
+                                            .font(.headline)
+                                            .padding(.bottom, 2)
                                     
-                                    Text("\(counterViewModel.savingObject)")
-                                        .font(.title2)
+                                    
+                                    HStack{
+                                        Text("\(counterViewModel.savingObject)")
+                                            .font(.title2)
+                                        Spacer()
+                                        if counterViewModel.moneySaved() >= counterViewModel.savingsTarget {
+                                            Image(systemName: "checkmark.circle")
+                                                .font(.system(size: 22))
+                                                .foregroundStyle(.green)
+                                                .padding(.horizontal, -10)
+                                        }
+                                    }
                                 }
                                 Spacer()
                             }
@@ -208,7 +225,7 @@ struct StatisticsView: View {
             ScrollView{
                 Spacer()
                 VStack {
-                    Text("Tap the Start Quitting button to begin")
+                    Text("Tap the button below to begin")
                         .font(.system(size: 20))
                         .bold()
                         .foregroundStyle(.white)

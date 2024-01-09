@@ -80,7 +80,7 @@
 			path = Stats;
 			sourceTree = "<group>";
 		};
-		039B0A2A2B4A237100E6ED48 /* New Group */ = {
+		039B0A2A2B4A237100E6ED48 /* Tips and Advice */ = {
 			isa = PBXGroup;
 			children = (
 				03CE72982B4A162000F338B9 /* TipsListView.swift */,
@@ -88,7 +88,7 @@
 				039B0A2B2B4A239900E6ED48 /* SnusInnhold.swift */,
 				03FDA5E92B4C3E60006C4A14 /* CravingTipsView.swift */,
 			);
-			path = "New Group";
+			path = "Tips and Advice";
 			sourceTree = "<group>";
 		};
 		03DE34062B37158800CBF5FA = {
@@ -112,7 +112,7 @@
 			children = (
 				03DE34122B37158800CBF5FA /* Slutta231223App.swift */,
 				03DE34142B37158800CBF5FA /* ContentView.swift */,
-				039B0A2A2B4A237100E6ED48 /* New Group */,
+				039B0A2A2B4A237100E6ED48 /* Tips and Advice */,
 				0397E5B52B38D91600D615C1 /* Stats */,
 				03DE34232B371CDD00CBF5FA /* SnusUsageInputView.swift */,
 				03DE34212B37181E00CBF5FA /* CounterViewModel.swift */,

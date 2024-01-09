@@ -35,7 +35,7 @@ class CounterViewModel: ObservableObject {
         self.pricePerPackageOfSnus = pricePerPackageOfSnus
         self.piecesOfSnusPerPackage = piecesOfSnusPerPackage
         self.quitReason = quitReason
-        self.userHasQuitted = true // Assuming default value, adjust if needed
+        self.userHasQuitted = false // Assuming default value, adjust if needed
         self.savingsTarget = 10_000.0 // Assuming default value, adjust if needed
         self.savingObject = "Bitcoin" // Assuming default value, adjust if needed
     }
