@@ -28,7 +28,9 @@ struct SlutteApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView(counterViewModel: counterViewModel)
+                .preferredColorScheme(.light)
         }
+
     }
 }
 

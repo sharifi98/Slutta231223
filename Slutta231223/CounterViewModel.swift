@@ -86,6 +86,13 @@ class CounterViewModel: ObservableObject {
         return totalSnusNotConsumed * costPerSnus
     }
     
+    func secondsSinceQuitting() -> Double {
+        let now = Date.now
+        let secondsSinceQuit = now.timeIntervalSince(quitDate)
+        return secondsSinceQuit
+    }
+
+    
     func elapsedTimeAttributed() -> AttributedString {
         let elapsedTime = Date.now.timeIntervalSince(quitDate)
         let days = Int(elapsedTime / 86400)
