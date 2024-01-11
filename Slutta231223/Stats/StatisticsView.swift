@@ -32,7 +32,7 @@ struct StatisticsView: View {
                     VStack(spacing: 0) {
                         Color(red: 111 / 255.0, green: 110 / 255.0, blue: 85 / 255.0)
                             .frame(height: geometry.size.height * 0.7) // 70% height for blue
-                        Color.gray.opacity(0.3)
+                        Color(red: 111 / 255.0, green: 110 / 255.0, blue: 85 / 255.0)
                             .frame(height: geometry.size.height * 0.4) // 40% height for white
                     }
         }
@@ -104,7 +104,7 @@ struct StatisticsView: View {
                     ZStack {
                         // Background card
                         RoundedRectangle(cornerRadius: 20.0)
-                            .fill(Color.white)
+                            .fill(Color.yellow)
                             .shadow(radius: 10) // Adds a shadow for a subtle 3D effect
                             .frame(width: 375, height: 200)
                         
@@ -151,7 +151,6 @@ struct StatisticsView: View {
                                     
                                     Spacer()
                                     Text("\(counterViewModel.savingsTarget, specifier: "%.0f") kr")
-                                        .foregroundColor(.gray)
                                 }
                                 .padding(.horizontal, 2)
                                 
@@ -174,17 +173,28 @@ struct StatisticsView: View {
                                     Spacer()
                                     Spacer()
                                 }
+                                
+                                
                             }
+                            
+                            
                         }
                         .padding(.horizontal, 30)
                         .padding(.vertical, 10)
+                        
+                        Spacer()
+                        
+                        
                     }
                     .foregroundColor(.black)
+                    
                     
                 }
                 .padding(.vertical, 20)
             }
-            .padding(.vertical, 100)
+            
+            HealthCardListView(counterViewModel: counterViewModel)
+                .padding(.bottom, 100)
         }
         .sheet(isPresented: $isShowingSavingPerInterval, content: {
             SavingPerInterval(counterViewModel: counterViewModel)
@@ -236,7 +246,13 @@ struct StatisticsView: View {
         }
     }
 }
-
+                        
+/*
+ 
+ VStack {
+     HealthCard(counterViewModel: counterViewModel, secondsUntilHealthGoalIsCompleted: 100, goalTime: "20 minutes", info: "When you use snus, the nicotine causes your pulse to increase and your blood vessels to constrict. It takes 20 minutes after you stop using nicotine for your pulse to go down.")
+ }
+ */
 
 #Preview {
     NavigationStack {

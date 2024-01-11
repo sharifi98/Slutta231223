@@ -16,17 +16,24 @@ struct ContentView: View {
         
             TabView(selection: $selectedTab) {
                     
-                    StatisticsView(counterViewModel: counterViewModel)
-                        .tabItem {
-                            Label("Statistics", systemImage: "chart.bar.xaxis")
-                        }
-                        .tag(0)
+                    Group {
+                        StatisticsView(counterViewModel: counterViewModel)
+                            .tabItem {
+                                Label("Statistics", systemImage: "chart.bar.xaxis")
+                                    .tint(.white)
+                            }
+                            .tag(0)
 
-                    TipsListView()
-                        .tabItem {
-                            Label("Tips", systemImage: "warninglight.fill")
-                        }
-                        .tag(1)
+                        TipsListView()
+                            .tabItem {
+                                Label("Tips", systemImage: "warninglight.fill")
+                                    
+                            }
+                            .tag(1)
+                            
+                    }
+                    .toolbar(.visible, for: .tabBar)
+                    .toolbarBackground(Color.white, for: .tabBar)
             }
 
         
