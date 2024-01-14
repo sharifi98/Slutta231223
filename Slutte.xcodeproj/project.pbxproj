@@ -98,7 +98,7 @@
 		03DE34062B37158800CBF5FA = {
 			isa = PBXGroup;
 			children = (
-				03DE34112B37158800CBF5FA /* Slutta231223 */,
+				03DE34112B37158800CBF5FA /* Slutta */,
 				03DE34102B37158800CBF5FA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -111,7 +111,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		03DE34112B37158800CBF5FA /* Slutta231223 */ = {
+		03DE34112B37158800CBF5FA /* Slutta */ = {
 			isa = PBXGroup;
 			children = (
 				03DE34122B37158800CBF5FA /* SlutteApp.swift */,
@@ -124,7 +124,7 @@
 				03DE34182B37158900CBF5FA /* Slutta231223.entitlements */,
 				03DE34192B37158900CBF5FA /* Preview Content */,
 			);
-			path = Slutta231223;
+			path = Slutta;
 			sourceTree = "<group>";
 		};
 		03DE34192B37158900CBF5FA /* Preview Content */ = {

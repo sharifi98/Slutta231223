@@ -89,6 +89,7 @@ struct StatisticsView: View {
             VStack(alignment: .center) {
                 Text("You quit on \(counterViewModel.quitDate.formatted(.dateTime.day().month().year()))")
                     .foregroundStyle(.white)
+                    .padding(.top, 20)
                 DaysSinceQuittingCounter(counterViewModel: counterViewModel)
                     .padding(.vertical, 20)
                 
